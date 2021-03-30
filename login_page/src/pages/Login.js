@@ -1,5 +1,30 @@
 import React, { useState } from 'react';
 
+const API_URL = "https://idu-test.datazoo.com/api/v2/auth/sign_in";
+
+
+//  response success: {"message": "Logged in!", "sessionToken": "{value}"}
+async function fetch_login(user, pass) {
+    const url = `${API_URL}`;
+
+    let login = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({username: user, password: pass})
+    })
+    .then(res => res.json())
+    .then(response => {
+        console.log(response);
+        return response;
+    })
+
+    .catch((error) => {
+        console.error(error);
+    })
+
+    return login;
+}
+
+
 function LoginForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -16,7 +41,7 @@ function LoginForm() {
             <input
             type="text"
             placeholder="Username"
-            name="username"
+            id="username"
             value={username}
             onChange={(e) => {
                 setUsername(e.target.value);
@@ -26,7 +51,7 @@ function LoginForm() {
             <input
              type="password"
              placeholder="Password"
-             name="pwd"
+             id="pwd"
              value={password}
              onChange={(e) => {
                  setPassword(e.target.value);
@@ -34,20 +59,22 @@ function LoginForm() {
              ></input>
             </label>
             <button onClick={() => {
-                setError("bad")
+                fetch_login(username, password);
+                setError("You do not have access to this environment, only to: Incorrect password detected");
             }}>Submit</button>
             <button onClick={() => {
                 setUsername("");
                 setPassword("");
             }}>Cancel</button>
-             </form>
-             {error ? (
+              {error ? (
             <div className="Error">
               <p>{error}</p>
             </div>
           ) : (
             ""
           )}
+             </form>
+           
         </div>
     )
 }

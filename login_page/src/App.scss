@@ -4,3 +4,23 @@ body {
   height: 100em;
   background: #e0e0e0 !important;
 }
+
+
+header {
+  background-color: white;
+  height: 6em;
+}
+
+#logo {
+  height: 3.5em;  
+  position: relative;
+  right: 53em;
+  top: 1em;
+}
+
+.divHeader h2 {
+  position: relative;
+  bottom: 1.8em;
+  font-family: Helvetica;
+  font-size: 2.2em;
+}

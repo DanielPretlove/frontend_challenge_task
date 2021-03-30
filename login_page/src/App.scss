@@ -12,7 +12,7 @@ header {
 }
 
 #logo {
-  height: 3.1em;
+  height: 3em;
   position: relative;
   right: 54em;
   top: 1em;
@@ -21,7 +21,7 @@ header {
 .divHeader h2 {
   position: relative;
   bottom: 1.6em;
-  left: 1.5em;
+  text-align: center;
   font-family: Helvetica;
   font-size: 2.2em;
 }
@@ -30,7 +30,7 @@ header {
   background-color: white;
   margin-right: 80em;
   position: relative;
-  left: 40em;
+  left: 37em;
   top: 3em;
   height: 33em;
   width: 45em;
@@ -39,14 +39,16 @@ header {
 
   h2 {
     position: relative;
-    top: 2em;
+    top: 1em;
+    text-align: center;
+    font-size: 2em;
   }
 
   img {
     position: relative;
     height: 8em;
     left: 17.5em;
-    top: 2em;
+    top: 1em;
   }
 
   label {
@@ -70,19 +72,19 @@ header {
 
   #username {
     position: relative;
-    top: 5.5em;
+    top: 4.5em;
     right: 3em;
   }
 
   #pwd {
     position: relative;
-    top: 7.5em;
+    top: 6.5em;
     left: 1em;
   }
 
   button {
     position: relative;
-    top: 10.5em;
+    top: 9.5em;
     left: 1.3em;
     color: #fff;
     background-color: #4ead49;
@@ -102,6 +104,7 @@ header {
 
   p {
     position: relative;
-    top: 9.5em;
+    top: 8.5em;
+    text-align: center;
   }
 }

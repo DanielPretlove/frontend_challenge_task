@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import icon from '../images/avatar_icon.png';
 
 const API_URL = "https://idu-test.datazoo.com/api/v2/auth/sign_in";
 
@@ -36,7 +37,8 @@ function LoginForm() {
              onSubmit={(e) => {
                 e.preventDefault();
              }}>
-            <h2>General settings</h2>
+            <h2>Login to account</h2>
+            <img src={icon} alt="Icon" />
             <label htmlFor="username">
             <input
             type="text"
